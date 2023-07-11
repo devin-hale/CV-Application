@@ -1,13 +1,13 @@
-import PageHeader from "@/components/PageHeader.js"
-
+import PageHeader from "@/components/PageHeader.js";
+import GeneralInfo from "@/components/generalInfo";
 
 const Home = () => {
+    return (
+        <div>
+            <PageHeader />
+            <GeneralInfo />
+        </div>
+    );
+};
 
-  return (
-    <div>
-      <PageHeader />
-    </div>
-  )
-}
-
-export default Home
+export default Home;
