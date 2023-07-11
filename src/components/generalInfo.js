@@ -14,7 +14,7 @@ const GeneralInfo = () => {
   const [email, setEmail] = useState("");
   const [tempEmail, setTempEmail] = useState(email);
   //Editing Status
-  const [editing, setEditing] = useState(false);
+  const [editing, setEditing] = useState(true);
   //Form Changed Status
   const [changed, setChanged] = useState(false);
 
