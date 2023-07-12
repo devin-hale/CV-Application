@@ -45,7 +45,12 @@ const EducationField = () => {
 
   const handleAdd = () => {
     const newEd = [...ed];
-    const newID = newEd[newEd.length - 1].id + 1;
+    let newID;
+    if (newEd.length === 0) {
+      newID = 1;
+    } else {
+      newID = newEd[newEd.length - 1].id + 1;
+    }
     newEd.push({
       id: newID,
       major: "New Education",
@@ -59,7 +64,7 @@ const EducationField = () => {
 
   return (
     <div className=" self-center">
-      <div className="rounded p-1 m-[10px] border-2 border-slate-300 min-w-[355px] max-w-lg relative">
+      <div className="rounded p-1 m-[10px] border-2 border-slate-300 min-w-[355px] w-lg relative">
         <h1 className=" underline text-xl">Education</h1>
         {ed.map((job) => {
           return (

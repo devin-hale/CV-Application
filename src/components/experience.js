@@ -45,7 +45,12 @@ const ExperienceField = () => {
 
   const handleAdd = () => {
     const newExp = [...exp];
-    const newID = newExp[newExp.length - 1].id + 1;
+    let newID;
+    if (newExp.length === 0) {
+      newID = 1;
+    } else {
+      newID = newExp[newExp.length - 1].id + 1;
+    }
     newExp.push({
       id: newID,
       role: "New Experience",
@@ -59,7 +64,7 @@ const ExperienceField = () => {
 
   return (
     <div className=" self-center">
-      <div className="rounded p-1 m-[10px] border-2 border-slate-300 min-w-[355px] max-w-lg relative">
+      <div className="rounded p-1 m-[10px] border-2 border-slate-300 min-w-[355px] w-lg relative">
         <h1 className=" underline text-xl">Experience</h1>
         {exp.map((job) => {
           return (
