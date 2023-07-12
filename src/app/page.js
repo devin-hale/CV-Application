@@ -1,6 +1,7 @@
 import PageHeader from "@/components/PageHeader.js";
 import GeneralInfo from "@/components/generalInfo";
 import ExperienceField from "@/components/experience";
+import EducationField from "@/components/education";
 
 const Home = () => {
   return (
@@ -8,6 +9,7 @@ const Home = () => {
       <PageHeader />
       <GeneralInfo />
       <ExperienceField />
+      <EducationField />
     </div>
   );
 };
