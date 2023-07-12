@@ -119,7 +119,7 @@ const ExperiencePanel = ({
     </form>
   ) : (
     <div
-      className="mt-[7.5px] mr-[5px] p-1 relative rounded hover:bg-slate-200 hover:transition-all transition-all"
+      className="mt-[7.5px] mr-[5px] p-2 relative rounded hover:bg-slate-200 hover:transition-all transition-all"
       key={id}
     >
       <div>
@@ -144,7 +144,7 @@ const ExperiencePanel = ({
         </button>
       </div>
       {isDeleting ? (
-        <div className="z-10 w-[100%] bg-[rgba(0,0,0,.4)] h-[100%] absolute top-0 rounded flex align-middle">
+        <div className="z-10 w-[100%] bg-[rgba(0,0,0,.4)] h-[100%] absolute top-0 right-0 rounded flex align-middle">
           <div className="bg-white w-40 m-auto rounded shadow-lg text-center p-1">
             <p className="text-[16px]">Delete Experience?</p>
             <div className="flex flex-row flex-nowrap justify-evenly align-middle">

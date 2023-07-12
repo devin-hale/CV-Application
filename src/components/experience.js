@@ -48,12 +48,11 @@ const ExperienceField = () => {
     const newID = newExp[newExp.length - 1].id + 1;
     newExp.push({
       id: newID,
-      role: "",
-      company: "",
-      time: "",
-      resp: "",
+      role: "New Experience",
+      company: "Company Name",
+      time: "Time Frame",
+      resp: "Responsibilities",
     });
-    console.log(newExp);
 
     setExp(newExp);
   };
@@ -77,7 +76,7 @@ const ExperienceField = () => {
           );
         })}
         <button
-          className="p-1 border-green-500 border-[2px] rounded hover:bg-green-200 hover:transition-all transition-all"
+          className="p-1 m-[5px] border-green-500 border-[2px] rounded hover:bg-green-200 hover:transition-all transition-all"
           type="button"
           onClick={handleAdd}
         >
