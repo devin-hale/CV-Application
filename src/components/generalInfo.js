@@ -58,33 +58,43 @@ const GeneralInfo = () => {
     setChanged(false);
   };
 
+  const nullCheck = (arr) => {
+    let nullCount = 0;
+    arr.forEach((el) => {
+      if (el.length === 0) nullCount++;
+    });
+    return nullCount === 3 ? true : false;
+  };
+
   return (
-    <div>
+    <div className=" self-center">
       {!editing ? (
         <div className="rounded p-1 m-[10px] border-2 border-slate-300 min-w-[355px] max-w-lg relative">
-          <div className="inputs grid grid-cols-2 grid-rows-2">
+          <div className="inputs flex flex-col">
             <p className="col-span-2 text-3xl text-center underline">{name}</p>
-            <div className="flex flex-row flex-nowrap justify-center align-middle col-span-2 sm:col-span-1">
-              <div className="flex justify-center align-middle">
-                <Image
-                  src="./static/images/phone.svg"
-                  width={15}
-                  height={15}
-                  alt="Email"
-                />
+            <div className="flex flex-row flex-nowrap align-middle justify-evenly m-[5px]">
+              <div className="flex flex-row flex-nowrap justify-center align-middle col-span-2 sm:col-span-1">
+                <div className="flex justify-center align-middle">
+                  <Image
+                    src="./static/images/phone.svg"
+                    width={15}
+                    height={15}
+                    alt="Email"
+                  />
+                </div>
+                <p className="text-center self-center">{phone}</p>
               </div>
-              <p className="text-center self-center">{phone}</p>
-            </div>
-            <div className="flex flex-row flex-nowrap justify-center align-middle col-span-2 sm:col-span-1">
-              <div className="flex justify-center align-middle">
-                <Image
-                  src="./static/images/mail.svg"
-                  width={15}
-                  height={15}
-                  alt="Email"
-                />
+              <div className="flex flex-row flex-nowrap justify-center align-middle col-span-2 sm:col-span-1">
+                <div className="flex justify-center align-middle">
+                  <Image
+                    src="./static/images/mail.svg"
+                    width={15}
+                    height={15}
+                    alt="Email"
+                  />
+                </div>
+                <p className="text-center self-center">{email}</p>
               </div>
-              <p className="text-center self-center">{email}</p>
             </div>
           </div>
           <div className="flex justify-end">
@@ -179,15 +189,17 @@ const GeneralInfo = () => {
               Save
             </button>
 
-            <button
-              className="saveButton m-[5px] ml-[2.5px] transition-all hover:bg-red-200 hover:transition-all hover:scale-105 p-[3px] rounded border-[2px] border-red-500 text-red-600"
-              type="button"
-              onClick={() => {
-                defaultState(), toggleEdit();
-              }}
-            >
-              Cancel
-            </button>
+            {nullCheck([tempName, tempPhone, tempEmail]) ? null : (
+              <button
+                className="saveButton m-[5px] ml-[2.5px] transition-all hover:bg-red-200 hover:transition-all hover:scale-105 p-[3px] rounded border-[2px] border-red-500 text-red-600"
+                type="button"
+                onClick={() => {
+                  defaultState(), toggleEdit();
+                }}
+              >
+                Cancel
+              </button>
+            )}
           </div>
         </form>
       )}

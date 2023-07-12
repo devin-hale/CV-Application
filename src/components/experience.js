@@ -58,7 +58,7 @@ const ExperienceField = () => {
   };
 
   return (
-    <div>
+    <div className=" self-center">
       <div className="rounded p-1 m-[10px] border-2 border-slate-300 min-w-[355px] max-w-lg relative">
         <h1 className=" underline text-xl">Experience</h1>
         {exp.map((job) => {

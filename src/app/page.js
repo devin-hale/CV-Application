@@ -4,7 +4,7 @@ import ExperienceField from "@/components/experience";
 
 const Home = () => {
   return (
-    <div>
+    <div className="flex flex-col align-middle justify-center">
       <PageHeader />
       <GeneralInfo />
       <ExperienceField />
