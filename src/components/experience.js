@@ -15,7 +15,33 @@ const ExperienceField = () => {
     },
   ]);
 
-  const handleUpdate = (e) => {};
+  const handleUpdate = (id, tempRole, tempCompany, tempTime, tempResp) => {
+    const updateIndex = exp.findIndex((job) => job.id === id);
+    if (updateIndex > -1) {
+      const newExp = [...exp];
+      newExp[updateIndex] = {
+        id: id,
+        role: tempRole,
+        company: tempCompany,
+        time: tempTime,
+        resp: tempResp,
+      };
+      setExp(newExp);
+    }
+  };
+
+  const handleDelete = (id) => {
+    const delIndex = exp.findIndex((job) => job.id === id);
+    if (delIndex > -1) {
+      const newExp = [...exp];
+      newExp.splice(delIndex);
+      setExp(newExp);
+    }
+  };
+
+  useEffect(() => {
+    console.log(exp);
+  });
 
   return (
     <div>
@@ -31,6 +57,7 @@ const ExperienceField = () => {
               time={job.time}
               resp={job.resp}
               submitFunc={handleUpdate}
+              deleteFunc={handleDelete}
             />
           );
         })}
