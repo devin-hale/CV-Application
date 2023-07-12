@@ -43,6 +43,21 @@ const ExperienceField = () => {
     console.log(exp);
   });
 
+  const handleAdd = () => {
+    const newExp = [...exp];
+    const newID = newExp[newExp.length - 1].id + 1;
+    newExp.push({
+      id: newID,
+      role: "",
+      company: "",
+      time: "",
+      resp: "",
+    });
+    console.log(newExp);
+
+    setExp(newExp);
+  };
+
   return (
     <div>
       <div className="rounded p-1 m-[10px] border-2 border-slate-300 min-w-[355px] max-w-lg relative">
@@ -61,7 +76,13 @@ const ExperienceField = () => {
             />
           );
         })}
-        <button type="button">Add +</button>
+        <button
+          className="p-1 border-green-500 border-[2px] rounded hover:bg-green-200 hover:transition-all transition-all"
+          type="button"
+          onClick={handleAdd}
+        >
+          Add+
+        </button>
       </div>
     </div>
   );

@@ -116,7 +116,7 @@ const GeneralInfo = () => {
               </div>
               <input
                 className="generalName m-[5px] p-[3px] rounded border-2"
-                type="text"
+                type="name"
                 value={tempName}
                 onChange={(e) => {
                   changeName(e), tempCheck(e);
